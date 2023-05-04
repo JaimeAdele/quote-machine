@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import Quote from './components/Quote'
+import quotes from './data/quotes';
+import colors from './data/colors';
 
 function App() {
+  const root = document.querySelector(':root');
+
+  const [color, setColor] = useState(colors[Math.floor(Math.random() + colors.length)]);
+  root.style.setProperty('--main-color', color);
+
+  const [quote, setQuote] = useState(quotes[Math.floor(Math.random() * quotes.length)]);
+
+  const changeQuote = () => {
+    setQuote(quotes[Math.floor(Math.random() * quotes.length)]);
+    setColor(colors[Math.floor(Math.random() * colors.length)]);
+    root.style.setProperty('--main-color', color);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Quote color={color} quote={quote} changeQuote={changeQuote} />
+      
     </div>
   );
 }

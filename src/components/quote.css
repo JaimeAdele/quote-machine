@@ -1,0 +1,66 @@
+#quote-box {
+  display: table;
+  box-sizing: border-box;
+  background-color: white;
+  width: 550px;
+  max-width: 90vw;
+  border-radius: 5px;
+  padding: 45px;
+}
+
+#text {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: normal;
+  margin: 0;
+}
+
+#author {
+  text-align: right;
+}
+
+#buttons {
+  margin-top: 25px;
+}
+
+.social-button {
+  transition: background-color 1s linear;
+  background-color: var(--main-color);
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  color: white;
+  margin-right: 8px;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+i {
+  margin: 12px;
+}
+
+.inline {
+  display: inline;
+}
+
+#new-quote {
+  transition: background-color 1s linear;
+  background-color: var(--main-color);
+  color: white;
+  font-size: .9rem;
+  border: none;
+  height: 40px;
+  width: 100px;
+  float: right;
+}
+
+#div-footer {
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
